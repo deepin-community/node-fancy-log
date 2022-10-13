@@ -1,0 +1,27 @@
+Source: node-fancy-log
+Maintainer: Debian Javascript Maintainers <pkg-javascript-devel@lists.alioth.debian.org>
+Uploaders: Pirate Praveen <praveen@debian.org>
+Section: javascript
+Testsuite: autopkgtest-pkg-nodejs
+Priority: optional
+Build-Depends:
+ debhelper-compat (= 13)
+ , dh-sequence-nodejs
+ , node-time-stamp
+Standards-Version: 4.5.1
+Vcs-Browser: https://salsa.debian.org/js-team/node-fancy-log
+Vcs-Git: https://salsa.debian.org/js-team/node-fancy-log.git
+Homepage: https://github.com/phated/fancy-log#readme
+Rules-Requires-Root: no
+
+Package: node-fancy-log
+Architecture: all
+Depends:
+ ${misc:Depends}
+ , node-time-stamp
+Provides:
+ ${nodejs:Provides}
+Description: Log things, prefixed with a timestamp
+ This module was pulled out of gulp-util for use inside the CLI.
+ .
+ Node.js is an event-based server-side JavaScript engine.

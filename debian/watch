@@ -1,0 +1,32 @@
+version=4
+opts=\
+dversionmangle=s/\+(debian|dfsg|ds|deb)(\.\d+)?$//,\
+filenamemangle=s/.*\/v?([\d\.-]+)\.tar\.gz/node-fancy-log-$1.tar.gz/ \
+ https://github.com/phated/fancy-log/tags .*/archive/v?([\d\.]+).tar.gz group
+
+# It is not recommended use npmregistry. Please investigate more.
+# Take a look at https://wiki.debian.org/debian/watch/
+opts="searchmode=plain,component=ansi-gray,pgpmode=none" \
+ https://registry.npmjs.org/ansi-gray https://registry.npmjs.org/ansi-gray/-/ansi-gray-(0.1(?:.[\d\.]+)?)@ARCHIVE_EXT@ ignore
+
+opts=\
+component=color-support,\
+dversionmangle=auto,\
+filenamemangle=s/.*\/v?([\d\.-]+)\.tar\.gz/node-color-support-$1.tar.gz/ \
+ https://github.com/isaacs/color-support/tags?after=1.1.3 .*/archive/v?(1(?:.[\d\.]+)?).tar.gz ignore
+
+opts=\
+component=parse-node-version,\
+dversionmangle=auto,\
+filenamemangle=s/.*\/v?([\d\.-]+)\.tar\.gz/node-parse-node-version-$1.tar.gz/ \
+ https://github.com/gulpjs/parse-node-version/tags?after=1.0.1 .*/archive/v?(1(?:.[\d\.]+)?).tar.gz ignore
+
+# It is not recommended use npmregistry. Please investigate more.
+# Take a look at https://wiki.debian.org/debian/watch/
+opts="searchmode=plain,component=ansi-wrap,pgpmode=none" \
+ https://registry.npmjs.org/ansi-wrap https://registry.npmjs.org/ansi-wrap/-/ansi-wrap-([\d\.]+)@ARCHIVE_EXT@ ignore
+
+# It is not recommended use npmregistry. Please investigate more.
+# Take a look at https://wiki.debian.org/debian/watch/
+opts="searchmode=plain,component=types-fancy-log,ctype=nodejs,pgpmode=none" \
+ https://registry.npmjs.org/@types/fancy-log https://registry.npmjs.org/@types/fancy-log/-/fancy-log-([\d\.]+)@ARCHIVE_EXT@ checksum
